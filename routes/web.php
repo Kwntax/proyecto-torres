@@ -23,9 +23,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard.index');
-    })->name('dashboard');
+    Route::get('/grupo', [GroupsController::class, 'getDataApi'])->name('dashboard');
 });
 Route::get('/crud/create', function () {
     return view('crud.create');
@@ -34,5 +32,5 @@ Route::get('/crud/index', function () {
     return view('crud.index');
 });
 
-Route::get('grupo', [GroupsController::class, 'getDataApi']);
+
 
