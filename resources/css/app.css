@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.sidebar-bar{
+    background-color: #8C0B2E !important;
+}
