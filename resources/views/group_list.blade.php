@@ -32,7 +32,7 @@
       <!--First slide-->
       <div class="carousel-item active">
         @foreach ($collection as $item)
-        <div class="col-md-1" alt="100x100" style="float:left ">
+        <div class="col-md-1 " alt="100x100" style="float:left ">
           <div class="card mb-2">
             <img class="card-img-top rounded-circle"
                  src="{{$item['foto']}}" alt="Card image cap">
@@ -46,6 +46,37 @@
         @endforeach
         
       </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. Some more quick example text for the card's content.</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to make up the bulk of the card's content.</p>
+                    </div>
+                  </div>
+            </div>
+        </div>
     </div>
 
 
