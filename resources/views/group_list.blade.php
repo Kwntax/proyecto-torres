@@ -2,54 +2,53 @@
 
 @section('title', 'Dashboard')
 
+
+<script  src="/javascript/script.js" type="module"> </script>
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 @section('content_header')
+
     <h1>UTT</h1>
 @stop
 
 @section('content')
 
-  <!--Carousel Wrapper-->
-  <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+  
 
-    <!--Controls-->
-    <div class="controls-top">
-      <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
-      <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fas fa-chevron-right"></i></a>
-    </div>
-
-
-    <!--Indicators-->
-    <ol class="carousel-indicators">
-      <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
-      <li data-target="#multi-item-example" data-slide-to="1"></li>
-
-    </ol>
-
-
+  
     <!--Slides-->
-    <div class="carousel-inner" role="listbox">
+    <div id="carouselExampleControls" class="carousel " data-bs-ride="carousel">
 
-      <!--First slide-->
-      <div class="carousel-item active">
-        @foreach ($collection as $item)
-        <div class="col-md-1" alt="100x100" style="float:left ">
-          <div class="card mb-2">
-            <img class="card-img-top rounded-circle"
-                 src="{{$item['foto']}}" alt="Card image cap">
-            <div class="card-body">
-              <h4 class="card-title">{{$item['nombreCompleto']}}</h4>
-              <p class="card-text">{{$item['matricula']}}</p>
-              <a href="#" class="btn btn-primary">Button</a>
-            </div>
-          </div>
-        </div>
-        @endforeach
-        
-      </div>
+      <!--Controls-->
+      <div class="controls-top">
+      <a class="btn-floating" href="#carouselExampleControls" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
+      <a class="btn-floating" href="#carouselExampleControls" data-slide="next"><i class="fas fa-chevron-right"></i></a>
     </div>
 
 
+
+  <div class="carousel-inner">
+  @foreach ($collection as $item)
+    <div class="carousel-item {{ $loop->first ? 'active' : '' }}"> 
+    <div class="card">
+      <div class="img-wrapper">
+  <img src="{{$item['foto']}}"  alt="Alumno">
+      </div>
+  <div class="card-body">
+    <h5 class="card-title">{{$item['nombreCompleto']}}</h5>
+    <p class="card-text">{{$item['matricula']}}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
+</div>
+  </div>
+@endforeach
+    
+  
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
+
+
+  
   <canvas id="myChart" width="400" height="400"></canvas>
   <script>
   const ctx = document.getElementById('myChart').getContext('2d');
