@@ -1,7 +1,7 @@
 
 
 
-const multipleItemCarousel = document.querySelector('#carouselExampleControls');
+const multipleItemCarousel = document.querySelector('#carouselControls');
 
 if(window.matchMedia("(min-width:576px)").matches){
     const carousel = new bootstrap.Carousel(multipleItemCarousel, {
@@ -34,3 +34,7 @@ if(window.matchMedia("(min-width:576px)").matches){
 else{
 $(multipleItemCarousel).addClass('slide');
 }
+
+
+console.log('Hi!'); 
+

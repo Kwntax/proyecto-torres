@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GrupoController; 
-
+use App\Http\Controllers\AlumnosController; 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,14 +23,10 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/grupo', [GrupoController::class, 'getDataApi'])->name('dashboard');
+    Route::get('/grupo', [AlumnosController::class, 'show'])->name('dashboard');
 });
-Route::get('/crud/create', function () {
-    return view('crud.create');
-});
-Route::get('/crud/index', function () {
-    return view('crud.index');
-});
+/*Route::get('/grupo', [GrupoController::class, 'show'])->middleware('auth');*/
+Route::get('post/edit/{matricula}', [AlumnosController::class, 'edit'])->middleware('auth')->name('post.edit');
 
 
 
