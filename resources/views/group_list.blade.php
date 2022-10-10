@@ -47,7 +47,7 @@
         <div class="col-10">
           <div class="container card">
             @foreach($collectionGroup as $itemGrupo)
-            <h6>{{$itemGrupo['grupo']}}</h6>
+            <h6>{{}}</h6>
             <h6></h6>
             <h6></h6>
           @endforeach
