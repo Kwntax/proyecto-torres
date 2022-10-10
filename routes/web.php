@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\GroupsController; 
+use App\Http\Controllers\GrupoController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +23,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/grupo', [GroupsController::class, 'getDataApi'])->name('dashboard');
+    Route::get('/grupo', [GrupoController::class, 'getDataApi'])->name('dashboard');
 });
 Route::get('/crud/create', function () {
     return view('crud.create');
